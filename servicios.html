@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Servicios | FotoStudio GORED</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #10090c;
+            color: #f8e8e8;
+            font-family: Georgia, serif;
+        }
+
+        header,
+        footer {
+            background: #080507;
+            text-align: center;
+            padding: 22px 15px;
+            color: #d6a0ae;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #e8bd91;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            background: #211016;
+            padding: 15px;
+        }
+
+        nav a {
+            background: #4a202e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 13px;
+            border: 1px solid #bd8b70;
+            border-radius: 20px;
+            margin: 4px;
+        }
+
+        nav a:hover {
+            background: #d6a0ae;
+            color: #210d15;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 18px;
+            text-align: center;
+        }
+
+        .tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: #24131b;
+            border: 1px solid #986b65;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .tarjeta {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FotoStudio GORED</h1>
+        <p>Convertimos momentos en recuerdos</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="camaras.html">Cámaras</a>
+        <a href="lentes.html">Lentes</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="galeria.html">Galería</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="impresiones.html">Impresiones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito 🛒</a>
+    </nav>
+
+    <main>
+
+        <h2>Nuestros servicios</h2>
+
+        <p>
+            Te ayudamos a guardar tus momentos más importantes.
+        </p>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <img
+                    src="camaras/sf1.jpg"
+                    alt="Sesión fotográfica"
+                >
+
+                <h3>Sesiones fotográficas</h3>
+
+                <p>
+                    Sesiones para retratos, familias y ocasiones especiales.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <img
+                    src="camaras/ef.png"
+                    alt="Edición de fotografías"
+                >
+
+                <h3>Edición de fotos</h3>
+
+                <p>
+                    Ajustes de luz, color y encuadre para mejorar tus imágenes.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <img
+                    src="camaras/fe.jfif"
+                    alt="Fotografía de eventos"
+                >
+
+                <h3>Fotografía de eventos</h3>
+
+                <p>
+                    Fotografía para celebraciones y reuniones importantes.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>FotoStudio GORED</p>
+    </footer>
+
+</body>
+</html>

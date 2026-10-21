@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | FotoStudio GORED</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #10090c;
+            color: #f8e8e8;
+            font-family: Georgia, serif;
+        }
+
+        header,
+        footer {
+            background: #080507;
+            text-align: center;
+            padding: 22px 15px;
+            color: #d6a0ae;
+        }
+
+        h1,
+        h2 {
+            color: #e8bd91;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            background: #211016;
+            padding: 15px;
+        }
+
+        nav a,
+        button {
+            background: #4a202e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 13px;
+            border: 1px solid #bd8b70;
+            border-radius: 20px;
+            margin: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        nav a:hover,
+        button:hover {
+            background: #d6a0ae;
+            color: #210d15;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 35px 18px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 550px;
+            margin: 25px auto;
+            padding: 22px;
+            background: #24131b;
+            border: 1px solid #986b65;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            border-radius: 7px;
+            border: 1px solid #bd8b70;
+            background: #fff8fa;
+            color: #211016;
+            font-family: inherit;
+        }
+
+        button {
+            margin-top: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FotoStudio GORED</h1>
+        <p>Estamos para ayudarte</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="camaras.html">Cámaras</a>
+        <a href="lentes.html">Lentes</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="galeria.html">Galería</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="impresiones.html">Impresiones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito 🛒</a>
+    </nav>
+
+    <main>
+
+        <h2>Contáctanos</h2>
+
+        <p>
+            Completa el formulario para dejarnos tus dudas o comentarios.
+        </p>
+
+        <form onsubmit="enviarMensaje(event)">
+
+            <label for="nombre">Nombre:</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+            >
+
+            <label for="correo">Correo electrónico:</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                required
+            >
+
+            <label for="tema">Tema de consulta:</label>
+
+            <select id="tema" name="tema" required>
+                <option value="">Selecciona una opción</option>
+                <option>Productos</option>
+                <option>Servicios fotográficos</option>
+                <option>Impresiones</option>
+                <option>Otra consulta</option>
+            </select>
+
+            <label for="mensaje">Mensaje:</label>
+
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Enviar mensaje
+            </button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>FotoStudio GORED</p>
+        <p>© 2026 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function enviarMensaje(event) {
+
+            event.preventDefault();
+
+            alert(
+                'Gracias por tu mensaje. Este formulario es una demostración y todavía no envía correos.'
+            );
+
+            event.target.reset();
+
+        }
+    </script>
+
+</body>
+</html>

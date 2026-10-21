@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito | FotoStudio GORED</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #10090c;
+            color: #f8e8e8;
+            font-family: Georgia, serif;
+        }
+
+        header,
+        footer {
+            background: #080507;
+            text-align: center;
+            padding: 22px 15px;
+            color: #d6a0ae;
+        }
+
+        h1,
+        h2 {
+            color: #e8bd91;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            background: #211016;
+            padding: 15px;
+        }
+
+        nav a,
+        button {
+            background: #4a202e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 13px;
+            border: 1px solid #bd8b70;
+            border-radius: 20px;
+            margin: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        nav a:hover,
+        button:hover {
+            background: #d6a0ae;
+            color: #210d15;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 18px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #24131b;
+        }
+
+        th,
+        td {
+            border: 1px solid #986b65;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            color: #e8bd91;
+        }
+
+        .precio {
+            color: #e9b5c2;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            th,
+            td {
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            table button {
+                padding: 6px;
+                margin: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FotoStudio GORED</h1>
+        <p>Tus productos seleccionados</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="camaras.html">Cámaras</a>
+        <a href="lentes.html">Lentes</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="galeria.html">Galería</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="impresiones.html">Impresiones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito 🛒</a>
+    </nav>
+
+    <main>
+
+        <h2>Tu carrito de compras</h2>
+
+        <p>
+            Aquí aparecen los productos que agregaste desde las páginas
+            de la tienda.
+        </p>
+
+        <div id="contenidoCarrito"></div>
+
+        <p id="total" class="precio"></p>
+
+        <button onclick="vaciarCarrito()">
+            Vaciar carrito
+        </button>
+
+        <button onclick="finalizarCompra()">
+            Finalizar compra
+        </button>
+
+    </main>
+
+    <footer>
+        <p>FotoStudio GORED</p>
+        <p>© 2026 - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function obtenerCarrito() {
+
+            return JSON.parse(
+                localStorage.getItem('carritoFoto')
+            ) || [];
+
+        }
+
+        function guardarCarrito(carrito) {
+
+            localStorage.setItem(
+                'carritoFoto',
+                JSON.stringify(carrito)
+            );
+
+        }
+
+        function mostrarCarrito() {
+
+            const carrito = obtenerCarrito();
+
+            const contenedor = document.getElementById(
+                'contenidoCarrito'
+            );
+
+            const totalTexto = document.getElementById('total');
+
+            if (carrito.length === 0) {
+
+                contenedor.innerHTML = '<p>Tu carrito está vacío.</p>';
+
+                totalTexto.textContent = '';
+
+                return;
+
+            }
+
+            let html = `
+                <table>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+            `;
+
+            let total = 0;
+
+            carrito.forEach((producto, indice) => {
+
+                const subtotal = producto.precio * producto.cantidad;
+
+                total += subtotal;
+
+                html += `
+                    <tr>
+                        <td>${producto.nombre}</td>
+
+                        <td>
+                            $${producto.precio.toLocaleString('es-MX')}
+                        </td>
+
+                        <td>
+                            <button onclick="cambiarCantidad(${indice}, -1)">
+                                −
+                            </button>
+
+                            ${producto.cantidad}
+
+                            <button onclick="cambiarCantidad(${indice}, 1)">
+                                +
+                            </button>
+                        </td>
+
+                        <td>
+                            $${subtotal.toLocaleString('es-MX')}
+                        </td>
+
+                        <td>
+                            <button onclick="eliminarProducto(${indice})">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+
+            });
+
+            html += '</table>';
+
+            contenedor.innerHTML = html;
+
+            totalTexto.textContent =
+                'Total: $' + total.toLocaleString('es-MX');
+
+        }
+
+        function cambiarCantidad(indice, cambio) {
+
+            let carrito = obtenerCarrito();
+
+            carrito[indice].cantidad += cambio;
+
+            if (carrito[indice].cantidad <= 0) {
+
+                carrito.splice(indice, 1);
+
+            }
+
+            guardarCarrito(carrito);
+
+            mostrarCarrito();
+
+        }
+
+        function eliminarProducto(indice) {
+
+            let carrito = obtenerCarrito();
+
+            carrito.splice(indice, 1);
+
+            guardarCarrito(carrito);
+
+            mostrarCarrito();
+
+        }
+
+        function vaciarCarrito() {
+
+            localStorage.removeItem('carritoFoto');
+
+            mostrarCarrito();
+
+        }
+
+        function finalizarCompra() {
+
+            const carrito = obtenerCarrito();
+
+            if (carrito.length === 0) {
+
+                alert('Tu carrito está vacío.');
+
+                return;
+
+            }
+
+            alert(
+                'Esta es una demostración escolar. No se realiza ningún pago real.'
+            );
+
+        }
+
+        mostrarCarrito();
+    </script>
+
+</body>
+</html>

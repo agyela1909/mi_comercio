@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FotoStudio GORED</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #10090c;
+    color: #f8e8e8;
+}
+
+/* ENCABEZADO */
+header.encabezado {
+    background: #080507;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-bottom: 1px solid #986b65;
+}
+
+.logo {
+    width: 190px;
+    height: 125px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.marca {
+    text-align: left;
+}
+
+.marca h1 {
+    color: #e8bd91;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.marca p {
+    color: #d6a0ae;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* MENÚ */
+nav {
+    background: #211016;
+    padding: 18px 10px;
+    text-align: center;
+    border-bottom: 1px solid #b98268;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffe6eb;
+    background: #4a202e;
+    border: 1px solid #bd8b70;
+    padding: 11px 14px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #d69aaa;
+    color: #210d15;
+}
+
+/* PORTADA */
+.portada {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #1b0d13, #3c1928, #170a10);
+}
+
+.portada h2 {
+    font-size: 40px;
+    color: #e8bd91;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    color: #f2dce1;
+    font-size: 17px;
+}
+
+.boton {
+    display: inline-block;
+    background: #d6a0ae;
+    color: #210d15;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid #f1d0a8;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: #e9c59e;
+}
+
+/* PRODUCTOS */
+.productos {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.productos h2 {
+    color: #e8bd91;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.descripcion {
+    color: #d9bdc5;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tarjeta {
+    width: 260px;
+    padding: 28px 20px;
+    background: #24131b;
+    border: 1px solid #986b65;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px #0005;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    border-color: #e8bd91;
+}
+
+.tarjeta h3 {
+    color: #e8bd91;
+    margin-bottom: 12px;
+    font-size: 23px;
+}
+
+.tarjeta p {
+    color: #ead7dd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tarjeta a {
+    display: inline-block;
+    background: #603043;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #d3a07d;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.tarjeta a:hover {
+    background: #d6a0ae;
+    color: #210d15;
+}
+
+/* FRASE */
+.frase {
+    text-align: center;
+    padding: 40px 20px;
+    color: #e8bd91;
+    font-size: 22px;
+    font-style: italic;
+    background: #1b0d13;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background: #080507;
+    text-align: center;
+    padding: 25px 15px;
+    color: #d6a0ae;
+    border-top: 1px solid #986b65;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 600px) {
+    header.encabezado {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 12px;
+    }
+
+    .marca {
+        text-align: center;
+    }
+
+    .logo {
+        width: 160px;
+        height: 105px;
+    }
+
+    .marca h1 {
+        font-size: 25px;
+    }
+
+    .portada h2 {
+        font-size: 30px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+        font-size: 13px;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+<header class="encabezado">
+
+    <img class="logo"
+         src="GORED1.jpeg"
+         alt="Logotipo de FotoStudio GORED">
+
+    <div class="marca">
+        <h1>FotoStudio GORED</h1>
+        <p>Captura tus mejores momentos</p>
+    </div>
+
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="camaras.html">Cámaras</a>
+    <a href="lentes.html">Lentes</a>
+    <a href="accesorios.html">Accesorios</a>
+    <a href="galeria.html">Galería</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="impresiones.html">Impresiones</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="ofertas.html">Ofertas</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="carrito.html">Carrito 🛒</a>
+</nav>
+
+<!-- BIENVENIDA -->
+<section class="portada">
+
+    <h2>Bienvenidos a FotoStudio GORED</h2>
+
+    <p>
+        Cada fotografía guarda una historia, un sentimiento
+        y un recuerdo especial. Encuentra cámaras, lentes
+        y accesorios para capturar esos momentos que
+        merecen durar para siempre.
+    </p>
+
+    <a href="camaras.html" class="boton">
+        Descubrir productos
+    </a>
+
+</section>
+
+<!-- SECCIÓN DE PRODUCTOS -->
+<section class="productos">
+
+    <h2>Explora nuestra tienda</h2>
+
+    <p class="descripcion">
+        Todo lo que necesitas para dar vida a tus ideas.
+    </p>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+            <h3>Cámaras</h3>
+            <p>Encuentra tu compañera ideal para cada fotografía.</p>
+            <a href="camaras.html">Ver cámaras</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Lentes</h3>
+            <p>Descubre nuevos detalles y perspectivas.</p>
+            <a href="lentes.html">Ver lentes</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Accesorios</h3>
+            <p>Completa tu equipo con lo que necesitas.</p>
+            <a href="accesorios.html">Ver accesorios</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Impresiones</h3>
+            <p>Conserva tus recuerdos también en papel.</p>
+            <a href="impresiones.html">Ver impresiones</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Ofertas</h3>
+            <p>Descubre nuestros productos y promociones.</p>
+            <a href="ofertas.html">Ver ofertas</a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Galería</h3>
+            <p>Inspírate con el maravilloso mundo de la fotografía.</p>
+            <a href="galeria.html">Ver galería</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FRASE FINAL -->
+<section class="frase">
+    “Los momentos pasan, los recuerdos permanecen.”
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+    <p>FotoStudio GORED</p>
+    <p>Captura tus mejores momentos</p>
+    <p>© 2026 - Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

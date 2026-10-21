@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ofertas | FotoStudio GORED</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #10090c;
+            color: #f8e8e8;
+            font-family: Georgia, serif;
+        }
+
+        header,
+        footer {
+            background: #080507;
+            text-align: center;
+            padding: 22px 15px;
+            color: #d6a0ae;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #e8bd91;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            background: #211016;
+            padding: 15px;
+        }
+
+        nav a,
+        button {
+            background: #4a202e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 13px;
+            border: 1px solid #bd8b70;
+            border-radius: 20px;
+            margin: 4px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        nav a:hover,
+        button:hover {
+            background: #d6a0ae;
+            color: #210d15;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 18px;
+            text-align: center;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: #24131b;
+            border: 1px solid #986b65;
+            border-radius: 12px;
+            padding: 20px;
+            width: 270px;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .precio {
+            color: #e9b5c2;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .tarjeta {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FotoStudio GORED</h1>
+        <p>Encuentra algo especial para ti</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="camaras.html">Cámaras</a>
+        <a href="lentes.html">Lentes</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="galeria.html">Galería</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="impresiones.html">Impresiones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="carrito.html">Carrito 🛒</a>
+    </nav>
+
+    <main>
+
+        <h2>Nuestras ofertas</h2>
+
+        <p>
+            Descubre paquetes y productos destacados de FotoStudio GORED.
+        </p>
+
+        <div class="productos">
+
+            <div class="tarjeta">
+
+                <h3>Paquete 1 de fotografías</h3>
+
+                <p>
+                    <ul>
+                        <li>100 fotografías 6x del evento</li><br>
+                        <li>25 fotografias de estudio (parque)</li><br>
+                        <li>25 fotografias de gracias por acompañarme (de recuerdo para chicas)</li><br>
+                        <li>Un póster 16x20 (para casa)</li><br>
+                        <li>El préstamo de caballete</li><br>
+                        <li>Película  en HD, en memoria, con duración de 2 horas, personalizada y editada, originales.</li><br>
+                    </ul>
+                    Contratas con $1,000, la fecha del evento no importa te respetamos el precio,
+                    (Nota. Tomamos todas las fotografías que sean necesarias y tú escoges las impresas).
+                </p>
+
+                <p class="precio">$7,500</p>
+
+                <button onclick="agregar('Paquete 1 de fotografías', 7500)">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            
+        <div class="productos">
+
+            <div class="tarjeta">
+
+                <h3>Paquete 2 de fotografías</h3>
+
+                <p>
+                    <ul>
+                        <li>100 fotografías impresas</li><br>
+                        <li>25 fotos de la sesión</li><br>
+                        <li>25 fotos de obsequio(pequeñas)</li><br>
+                        <li>1 memoria con todas las foto y la película.</li><br>
+                        <li>1 poster 16x20</li><br>
+                        <li>Préstamo del caballete</li><br>
+                        <li>Película en HD, en memoria personalizada y editada, con duración de 2 horas</li><br>
+                    </ul>
+                    Contratas con $2,000, la fecha del evento no importa te respetamos el precio,
+                    (Nota. Tomamos todas las fotografías que sean necesarias y tú escoges las impresas).
+                </p>
+
+                <p class="precio">$9,000</p>
+
+                <button onclick="agregar('Paquete 2 de fotografías', 9000)">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <div class="productos">
+
+            <div class="tarjeta">
+
+                <h3>Paquete 3 de fotografías</h3>
+
+                <p>
+                    <ul>
+                        <li>incluye 100 fotografías impresas, misa y casino,<br></li>
+                        <li>Película en memoria grabada en HD personalizada y editada,<br> 
+                        con duración de 2 horas</li><br>                                           
+                    </ul>
+                    Contratas con $1,500, la fecha del evento no importa te respetamos el precio,
+                    (Nota. Tomamos todas las fotografías que sean necesarias y tú escoges las impresas).
+                </p>
+
+                <p class="precio">$6500</p>
+
+                <button onclick="agregar('Paquete 3 de fotografías', 6500)">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <div class="productos">
+
+            <div class="tarjeta">
+
+                <h3>Paquete 4 de fotografías</h3>
+
+                <p>
+                    <ul>
+                        <li>Pelicula en 4k en 2 memorias con duración de 2 horas, personalizadas y editas. </li><br>                                           
+                    </ul>
+                    Contratas con $1,000, la fecha del evento no importa te respetamos el precio,
+                    (Nota. Tomamos todas las fotografías que sean necesarias y tú escoges las impresas).
+                </p>
+
+                <p class="precio">$5,000</p>
+
+                <button onclick="agregar('Paquete 4 de fotografías', 5000)">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <div class="productos">
+
+            <div class="tarjeta">
+
+                <h3>Paquete 5 de fotografías</h3>
+
+                <p>
+                    <ul>
+                        <li>100 fotografías impresas</li><br>
+                        <li>1 póster 16x20</li><br>
+                        <li>25 fotografías de la sesión.</li><br>
+                    </ul>
+                    Contratas con $1,000, la fecha del evento no importa te respetamos el precio,
+                    (Nota. Tomamos todas las fotografías que sean necesarias y tú escoges las impresas).
+                </p>
+
+                <p class="precio">$5,000</p>
+
+                <button onclick="agregar('Paquete 5 de fotografías', 5000)">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <p> Hacemos contrato y una semana antes del evento tiene q estar liquidado, todo lo q se le ofrece se escribe en el contrato 👍 quedamos a sus órdenes 😊</p>
+
+    </main>
+
+    <footer>
+        <p>FotoStudio GORED</p>
+    </footer>
+
+    <script>
+        function agregar(nombre, precio) {
+
+            let carrito = JSON.parse(
+                localStorage.getItem('carritoFoto')
+            ) || [];
+
+            let producto = carrito.find(
+                p => p.nombre === nombre
+            );
+
+            if (producto) {
+
+                producto.cantidad++;
+
+            } else {
+
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+
+            }
+
+            localStorage.setItem(
+                'carritoFoto',
+                JSON.stringify(carrito)
+            );
+
+            alert('Producto agregado al carrito');
+
+        }
+    </script>
+
+</body>
+</html>
